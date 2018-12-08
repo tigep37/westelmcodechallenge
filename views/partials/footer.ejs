@@ -1,0 +1,37 @@
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script>
+        /*
+        * simpleGal -v0.0.1
+        * A simple image gallery plugin.
+        * https://github.com/steverydz/simpleGal
+        *
+        * Made by Steve Rydz
+        * Under MIT License
+        */
+        !function(a){a.fn.extend({simpleGal:function(b){var c={mainImage:".placeholder"};return b=a.extend(c,b),this.each(function(){var c=a(this).find("a"),d=a(this).siblings().find(b.mainImage);c.on("click",function(b){b.preventDefault();var c=a(this).attr("href");d.attr("src",c)})})}})}(jQuery);
+
+        jQuery(document).ready(function () {
+            jQuery('.thumbnails').simpleGal({
+              mainImage: '.custom'
+            });
+        });
+        // end simpleGal
+
+        //all hero images have class of .modal-open, clicking on them will open the modal
+        document.addEventListener('click', function (event) {
+        	// open modal window if image has modal-open class
+        	if (event.target.matches('.modal-open')) {
+        		let modal = document.getElementById('modal_' + event.target.id);
+        		modal.style.display = 'block';
+        	}
+
+        }, false);
+
+        // close modal
+        const closeModal = (el) => {
+            let modal = document.getElementById('modal_' + el);
+        	modal.style.display = 'none';
+        }
+    </script>
+</html>

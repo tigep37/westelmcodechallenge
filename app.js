@@ -16,6 +16,8 @@ app.get('/', function(req, res){
     });
 });
 
+
+
 app.listen(3000, '127.0.0.1', function(){
     console.log("WS APP SERVER HAS STARTED");
 });
