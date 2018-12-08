@@ -1,0 +1,24 @@
+{
+  "name": "westelm",
+  "version": "1.0.0",
+  "description": "west elm code challenge",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "tige prickett",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.0",
+    "mocha": "^5.2.0"
+  },
+  "scripts": {
+    "test": "mocha --timeout 10000"
+  }
+}

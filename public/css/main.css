@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700");
+
+/*global*/
+body {
+   font-family: Montserrat;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-weight: bold;
+}
+
+/*main page*/
+#main{
+    margin-top: 75px;
+
+}
+
+.card {
+    padding: 0px;
+    margin-bottom: 10px;
+}
+
+.hide {
+    display: none;
+}
+
+/*modal image gallery*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 100px;
+    overflow: auto;
+    background: rgba(0,0,0,0.8);
+}
+
+/*close button*/
+.close-btn {
+    margin: 50px 20px 20px 0;
+}
+
+.thumbnails img, .main-image img {
+      max-width: 100%;
+      padding: 5px;
+      border: 1px solid #ccc;
+      height: auto;
+      background: #fff;
+      box-shadow: 1px 1px 7px rgba(0,0,0,0.1);
+      border-radius: 5px;
+}
+
+.main-image {
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto 0.75em;
+}
+
+.thumbnails li {
+    display: inline;
+    margin: 0 10px 0 0;
+    width: 40px;
+}
+
+.thumbnails li img {
+    width: 80px;
+}
+
+.thumbnails {
+    padding: 0;
+}
