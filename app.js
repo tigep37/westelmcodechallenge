@@ -11,7 +11,7 @@ app.get('/', function(req, res){
     request(url, function(error, response, body){
         if(!error && response.statusCode == 200){
             let data = JSON.parse(body);
-            res.render('landing', { data: data });
+            res.render('landing', { data: data, title: 'All New'});
         }
     });
 });

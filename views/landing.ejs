@@ -1,46 +1,55 @@
 <% include partials/header %>
+
         <!--Start Items-->
-        <div class="container" id="main">
+        <section class="container" id="main">
+            <header>
+                <h3><%= data['name'] %></h3>
+            </header>
             <div class="row">
                 <% data["groups"].forEach(function(item){ %>
+                    <!-- card for each item in data -->
                      <div class="col-12 col-sm-6 col-md-4">
-                        <div class="card">
+                        <article class="card" role="article">
                             <div class="item blue">
-                                <img class="card-img-top modal-open blue" src="<%= item['hero']['href'] %>" alt="Card image cap" id="<%= item['id'] %>">
+                                <img class="card-img-top modal-open blue" src="<%= item['hero']['href'] %>" alt="Image of <%- item['name'] %>" role="img" id="<%= item['id'] %>">
 	                            <i>Click image to see more!</i>
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title"><%- item["name"] %></h5>
                                 <p class="card-text">Our <strong><%- item["name"] %></strong> are really pretty fabulous.  Click on the photo to see more images.</p>
                                 <p>$<%= item['priceRange']['selling']['high'] %></p>
-                                <a href="#" class="btn btn-outline-secondary">Add to Cart <i class="fas fa-cart-plus"></i></a>
-
-                                <div class="modal modal-close" id="modal_<%= item['id'] %>">
+                                <a href="#" class="btn btn-outline-secondary" role="button">Add to Cart <i class="fas fa-cart-plus"></i></a>
+                                <!-- begin modal div -->
+                                <div class="modal" id="modal_<%= item['id'] %>">
                                     <div class="d-flex flex-column align-items-center">
                                         <div class="align-self-end">
-                                            <a href="#" class="btn btn-outline-light close-btn" onClick="closeModal('<%= item['id'] %>')"><i class="fas fa-window-close"></i> Close</a>
+                                            <a href="#" class="btn btn-outline-light close-btn" role="button" onClick="closeModal('<%= item['id'] %>')"><i class="fas fa-window-close"></i> Close</a>
                                         </div>
                                         <div class="main-image">
-                                            <img src="<%= item['images'][0]['href'] %>" alt="Placeholder" class="custom">
+                                            <img src="<%= item['images'][0]['href'] %>" alt="Alternate image of <%- item['name'] %>" role="img" class="custom">
                                         </div>
 
                                         <ul class="thumbnails">
                                             <% item["images"].forEach(function(image){ %>
-                                                <li><a href="<%= image['href'] %>"><img src="<%= image['href'] %>" alt="Thumbnails"></a></li>
+                                                <li><a href="<%= image['href'] %>"><img src="<%= image['href'] %>" alt="Thumbnails of alternate <%- item['name'] %> images"></a></li>
                                             <% }); %>
                                         </ul>
                                     </div>
                                 </div>
+                                <!-- end modal div -->
                             </div>
-                            <div class="card-footer <%= item['messages'] ? '' : 'hide' %>">
+                            <!-- begin optional card footer -->
+                            <footer class="card-footer <%= item['messages'] ? '' : 'hide' %>">
                                 <% item["messages"].forEach(function(msg){ %>
                                     <p class="card-text"><small class="text-muted"><%= msg %></small></p>
                                 <% }); %>
-                            </div>
-                        </div>
+                            </footer>
+                            <!-- end footer -->
+                        </article>
                     </div>
+                    <!-- end card -->
                 <% }); %>
             </div>
-        </div>
-    </body>
+        </section>
+
 <% include partials/footer %>

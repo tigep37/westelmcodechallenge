@@ -11,6 +11,7 @@
   "dependencies": {
     "ejs": "^2.6.1",
     "express": "^4.16.4",
+    "git": "^0.1.5",
     "request": "^2.88.0"
   },
   "devDependencies": {
@@ -19,7 +20,7 @@
     "mocha": "^5.2.0"
   },
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/tigep37/westelmcodechallenge"
+    "type": "git",
+    "url": "https://github.com/tigep37/westelmcodechallenge"
   }
 }
